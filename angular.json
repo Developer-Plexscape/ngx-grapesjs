@@ -67,9 +67,14 @@
               "projects/demo-editor/src/assets"
             ],
             "styles": [
-              "projects/demo-editor/src/styles.css"
+              "projects/demo-editor/src/styles.css",
+              "node_modules/grapesjs/dist/css/grapes.min.css",
+              "node_modules/grapesjs-preset-newsletter/dist/grapesjs-preset-newsletter.min.js"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/grapesjs/dist/grapes.min.js",
+              "node_modules/grapesjs-preset-newsletter/dist/grapesjs-preset-newsletter.min.js"
+            ]
           },
           "configurations": {
             "production": {

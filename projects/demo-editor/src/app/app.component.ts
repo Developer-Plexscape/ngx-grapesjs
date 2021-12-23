@@ -1,10 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { NgxGrapesjsComponent } from 'projects/ngx-grapesjs/src/public-api';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  templateUrl: './app.component.html'
 })
 export class AppComponent {
   title = 'demo-editor';
+  template = '<div>Test Email Template</div>'
+  placeholders = [{
+    value: 'UserName',
+    name: 'Agent name',
+    description: 'For Wings console only'
+  }];
+
+  @ViewChild(NgxGrapesjsComponent) editor: NgxGrapesjsComponent | undefined;
+  getInlinedHtml(){
+    console.log(this.editor?.getRawHtml());
+  }
 }
