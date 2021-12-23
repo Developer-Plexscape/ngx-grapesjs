@@ -147,6 +147,9 @@
               "exceptions": [
                 "*"
               ]
+            },
+            "line": {
+              "markers": ["/"]
             }
           }
         ],
