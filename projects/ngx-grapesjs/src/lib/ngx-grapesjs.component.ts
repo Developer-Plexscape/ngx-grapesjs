@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'lib-ngx-grapesjs',
@@ -10,12 +10,4 @@ import { Component, OnInit } from '@angular/core';
   styles: [
   ]
 })
-export class NgxGrapesjsComponent implements OnInit {
-
-  constructor() { }
-
-  // eslint-disable-next-line @angular-eslint/no-empty-lifecycle-method
-  ngOnInit(): void {
-  }
-
-}
+export class NgxGrapesjsComponent {}

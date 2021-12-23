@@ -8,9 +8,9 @@ describe('NgxGrapesjsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NgxGrapesjsComponent ]
+      declarations: [NgxGrapesjsComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
