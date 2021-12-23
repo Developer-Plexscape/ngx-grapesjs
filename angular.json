@@ -31,6 +31,15 @@
             "tsConfig": "projects/ngx-grapesjs/tsconfig.spec.json",
             "karmaConfig": "projects/ngx-grapesjs/karma.conf.js"
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/ngx-grapesjs/**/*.ts",
+              "projects/ngx-grapesjs/**/*.html"
+            ]
+          }
         }
       }
     },
