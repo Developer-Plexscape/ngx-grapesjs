@@ -4,6 +4,10 @@ import { CommandSender, Config, GrapesJsEditor, TextAction, TextEditor } from '.
 import { NgxGrapesjsService } from './ngx-grapesjs.service';
 import { Placeholder } from './placeholder.model';
 
+declare var grapesjs: {
+  init(options: any): {}
+};
+
 @Component({
   selector: 'lib-ngx-grapesjs',
   template: '<div id="gjs"></div>'
