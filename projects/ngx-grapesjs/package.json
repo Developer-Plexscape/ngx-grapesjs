@@ -1,6 +1,7 @@
 {
-  "name": "ngx-grapesjs",
+  "name": "@developer-plexscape/ngx-grapesjs",
   "version": "0.0.1",
+  "description": "Angular wrapper library for GrapesJS",
   "peerDependencies": {
     "@angular/common": "^13.0.0",
     "@angular/core": "^13.0.0",
@@ -9,5 +10,17 @@
   },
   "dependencies": {
     "tslib": "^2.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Developer-Plexscape/ngx-grapesjs.git"
+  },
+  "author": "Plexscape",
+  "bugs": {
+    "url": "https://github.com/Developer-Plexscape/ngx-grapesjs/issues"
+  },
+  "homepage": "https://github.com/Developer-Plexscape/ngx-grapesjs#readme",
+  "publishConfig": {
+    "registry":"https://npm.pkg.github.com"
   }
 }
