@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgxGrapesjsModule } from 'projects/ngx-grapesjs/src/public-api';
+import { NgxGrapesjsModule } from 'ngx-grapesjs';
 
 import { AppComponent } from './app.component';
 

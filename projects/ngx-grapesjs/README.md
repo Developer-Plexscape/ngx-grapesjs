@@ -1,24 +1,97 @@
-# NgxGrapesjs
+<h1 align="center">Welcome to ngx-grapesjs 👋</h1>
+<p>
+  <a href="https://github.com/Developer-Plexscape/ngx-grapesjs#readme" target="_blank">
+    <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
+  </a>
+  <a href="https://github.com/Developer-Plexscape/ngx-grapesjs/graphs/commit-activity" target="_blank">
+    <img alt="Maintenance" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" />
+  </a>
+  <a href="https://twitter.com/plexearth" target="_blank">
+    <img alt="Twitter: plexearth" src="https://img.shields.io/twitter/follow/plexearth.svg?style=social" />
+  </a>
+</p>
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.0.
+> Angular wrapper library for GrapesJS
 
-## Code scaffolding
+### 🏠 [Homepage](https://github.com/Developer-Plexscape/ngx-grapesjs#readme)
 
-Run `ng generate component component-name --project ngx-grapesjs` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngx-grapesjs`.
-> Note: Don't forget to add `--project ngx-grapesjs` or else it will be added to the default project in your `angular.json` file. 
+## Install
 
-## Build
+- Install the **GrapesJS** library and its newsletter preset
 
-Run `ng build ngx-grapesjs` to build the project. The build artifacts will be stored in the `dist/` directory.
+```sh
+  npm install grapesjs grapesjs-preset-newsletter
+```
 
-## Publishing
+- Install **ngx-grapesjs**
 
-After building your library with `ng build ngx-grapesjs`, go to the dist folder `cd dist/ngx-grapesjs` and run `npm publish`.
+```sh
+  npm install @developer-plexscape/ngx-grapesjs
+```
 
-## Running unit tests
+- Add GrapesJS scripts and styles in the `angular.json` file of your Angular workspace:
 
-Run `ng test ngx-grapesjs` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```json
+ "styles": [
+    "node_modules/grapesjs/dist/css/grapes.min.css",
+    "node_modules/grapesjs-preset-newsletter/dist/grapesjs-preset-newsletter.css"
+  ],
+  "scripts": [
+    "node_modules/grapesjs/dist/grapes.min.js",
+    "node_modules/grapesjs-preset-newsletter/dist/grapesjs-preset-newsletter.min.js"
+  ]
+```
 
-## Further help
+## Usage
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+ 1. Import `NgxGrapesjsModule` from the `ngx-grapesjs` library:
+
+ ```ts
+  import { NgxGrapesjsModule } from '@developer-plexscape/ngx-grapesjs';
+ ```
+
+2. Add `NgxGrapesjsModule` into the `imports` array of your Angular module:
+
+```ts
+  @NgModule({
+    declarations: [AppComponent],
+    imports: [
+      BrowserModule,
+      NgxGrapesjsModule
+    ],
+    bootstrap: [AppComponent]
+  })
+```
+
+3. Create an Angular component and add the following HTML snippet in its template:
+
+```html
+  <lib-ngx-grapesjs [template]="template" [placeholders]="placeholders"></lib-ngx-grapesjs>
+```
+
+The `lib-ngx-grapesjs` component supports passing the following input properties:
+
+ - `template`: the HTML content of the editor in string format
+ - `placeholders`: a list of variables with a predefined [format](https://github.com/Developer-Plexscape/ngx-grapesjs/blob/master/projects/ngx-grapesjs/src/lib/placeholder.model.ts) that represent custom data in the template
+
+To get the HTML content from the editor in ***raw*** format, you can use the `getRawHtml` method of the `lib-ngx-grapesjs` component.
+
+## Author
+
+👤 **Plexscape**
+
+* Website: https://www.plexearth.com
+* Twitter: [@plexearth](https://twitter.com/plexearth)
+* Github: [@Developer-Plexscape](https://github.com/Developer-Plexscape)
+* LinkedIn: [@plexearth](https://linkedin.com/company/plexearth)
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/Developer-Plexscape/ngx-grapesjs/issues).
+
+## Show your support
+
+Give a ⭐️ if this project helped you!
+
+***
+_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_

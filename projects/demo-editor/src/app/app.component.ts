@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { NgxGrapesjsComponent } from 'projects/ngx-grapesjs/src/public-api';
+import { NgxGrapesjsComponent } from 'ngx-grapesjs';
 
 @Component({
   selector: 'app-root',
