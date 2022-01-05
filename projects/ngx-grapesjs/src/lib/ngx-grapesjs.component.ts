@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { CommandSender, Config, GrapesJsEditor, TextAction, TextEditor } from './grapesjs.model';
 
+import { CommandSender, Config, GrapesJsEditor, TextAction, TextEditor } from './grapesjs.model';
 import { NgxGrapesjsService } from './ngx-grapesjs.service';
 import { Placeholder } from './placeholder.model';
 
@@ -39,7 +39,7 @@ export class NgxGrapesjsComponent implements OnInit {
 
   ngOnInit(): void {
     // setup the default parser. It can be overriden by providing a custom implementation of the NgxGrapesjsService
-    this.config.parser.parserHtml = this.ngxGrapesJsService.parserHtml;
+    this.config.parser.parserHtml = this.ngxGrapesJsService?.parserHtml;
 
     // initialize the editor
     this.editor = grapesjs.init(this.config);
@@ -95,11 +95,11 @@ export class NgxGrapesjsComponent implements OnInit {
   private undo = (editor: GrapesJsEditor, sender: CommandSender) => {
     sender.set('active', 0);
     editor.UndoManager?.undo(1);
-  }
+  };
 
   private redo = (editor: GrapesJsEditor, sender: CommandSender) => {
     sender.set('active', 0);
     editor.UndoManager?.redo(1);
-  }
+  };
 
 }
