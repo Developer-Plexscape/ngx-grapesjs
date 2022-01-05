@@ -52,7 +52,7 @@ export interface Config {
   components: string;
   pluginsOpts: Record<string, any>;
   parser: {
-    parserHtml: {};
+    parserHtml: {}
   };
 }
 

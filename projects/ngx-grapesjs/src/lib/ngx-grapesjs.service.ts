@@ -5,9 +5,6 @@ import { Injectable } from '@angular/core';
 })
 export class NgxGrapesjsService {
 
-  parserHtml = (input: string) => {
-    const parser = new DOMParser();
-    return parser.parseFromString(input, 'text/html');
-  };
+  parserHtml = (input: string) => {};
 
 }
