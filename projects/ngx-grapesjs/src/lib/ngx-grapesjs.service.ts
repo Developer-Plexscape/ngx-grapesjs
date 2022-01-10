@@ -5,6 +5,6 @@ import { Injectable } from '@angular/core';
 })
 export class NgxGrapesjsService {
 
-  parserHtml = (_: string) => {};
+  parserHtml = {};
 
 }
