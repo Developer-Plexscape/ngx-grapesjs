@@ -54,6 +54,9 @@ export interface Config {
   parser: {
     parserHtml: {}
   };
+  storageManager: {
+    id: string
+  };
 }
 
 export interface CommandSender {
