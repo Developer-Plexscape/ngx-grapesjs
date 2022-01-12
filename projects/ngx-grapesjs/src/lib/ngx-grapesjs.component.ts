@@ -19,6 +19,10 @@ export class NgxGrapesjsComponent implements OnInit {
     this.config.components = content;
   }
   @Input() placeholders: Placeholder[] = [];
+  @Input()
+  set storagePrefix(prefix: string) {
+    this.config.storageManager.id = prefix;
+  }
 
   private editor: GrapesJsEditor | undefined = undefined;
   private config: Config = {
@@ -32,6 +36,9 @@ export class NgxGrapesjsComponent implements OnInit {
     },
     parser: {
       parserHtml: {}
+    },
+    storageManager: {
+      id: 'gjs-'
     }
   };
 
@@ -40,7 +47,6 @@ export class NgxGrapesjsComponent implements OnInit {
   ngOnInit(): void {
     // setup the default parser. It can be overriden by providing a custom implementation of the NgxGrapesjsService
     this.config.parser.parserHtml = this.ngxGrapesJsService?.parserHtml;
-
     // initialize the editor
     this.editor = grapesjs.init(this.config);
 
