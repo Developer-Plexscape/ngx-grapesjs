@@ -1,6 +1,6 @@
 {
   "name": "@developer-plexscape/ngx-grapesjs",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Angular wrapper library for GrapesJS",
   "peerDependencies": {
     "@angular/common": "^13.0.0",

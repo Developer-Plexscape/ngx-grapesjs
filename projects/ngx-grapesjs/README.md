@@ -76,6 +76,16 @@ The `lib-ngx-grapesjs` component supports passing the following input properties
 
 To get the HTML content from the editor in ***raw*** format, you can use the `getRawHtml` method of the `lib-ngx-grapesjs` component.
 
+The GrapesJS editor saves all content in the local storage of the browser using a specific prefix. If you want to use a custom prefix, you can pass it as an input property in the component such as:
+
+```html
+  <lib-ngx-grapesjs [storagePrefix]="myPrefix"></lib-ngx-grapesjs>
+```
+
+where `myPrefix` is a property of string value.
+
+>It is recommended to use a custom prefix when running multiple instances of the editor such as when opening or editing content in different tabs.
+
 ## Author
 
 👤 **Plexscape**
