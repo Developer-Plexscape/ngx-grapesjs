@@ -2,6 +2,10 @@
   "name": "@developer-plexscape/ngx-grapesjs",
   "version": "0.0.4",
   "description": "Angular wrapper library for GrapesJS",
+  "scripts": {
+    "build": "tsc -p tsconfig.schematics.json",
+    "postbuild": "copyfiles schematics/*/schema.json schematics/*/files/** schematics/collection.json ../../dist/ngx-grapesjs/"
+  },
   "peerDependencies": {
     "@angular/common": "^13.0.0",
     "@angular/core": "^13.0.0",
@@ -22,5 +26,13 @@
   "homepage": "https://github.com/Developer-Plexscape/ngx-grapesjs#readme",
   "publishConfig": {
     "registry":"https://npm.pkg.github.com"
+  },
+  "schematics": "./schematics/collection.json",
+  "ng-add": {
+    "save": "devDependencies"
+  },
+  "devDependencies": {
+    "copyfiles": "file:../../node_modules/copyfiles",
+    "typescript": "file:../../node_modules/typescript"
   }
 }
