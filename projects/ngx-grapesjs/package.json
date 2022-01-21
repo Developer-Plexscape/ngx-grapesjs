@@ -8,7 +8,9 @@
   },
   "peerDependencies": {
     "@angular/common": "^13.0.0",
-    "@angular/core": "^13.0.0",
+    "@angular/core": "^13.0.0"
+  },
+  "allowedNonPeerDependencies":{
     "grapesjs": "^0.17.29",
     "grapesjs-preset-newsletter": "^0.2.21"
   },
