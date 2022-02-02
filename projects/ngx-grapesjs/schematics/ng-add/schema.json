@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "$id": "GrapesjsSchematicsNgAdd",
+  "title": "ng add schematic",
+  "type": "object",
+  "description": "Adds appropriate css and js files to angular.json file",
+  "properties": {
+    "project": {
+      "type": "string",
+      "description": "Name of the project.",
+      "$default": {
+        "$source": "projectName"
+      }
+    },
+    "editorType": {
+        "type": "string",
+        "default": "webpage editor",
+        "x-prompt": {
+          "message": "What type of editor would you like to use?",
+          "type": "list",
+          "items": [
+            { "value": "webpage editor", "label": "Webpage Editor" },
+            { "value": "newsletter editor",  "label": "Newsletter Editor" }
+          ]
+        }
+    }
+  }
+}

@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 
-import { CommandSender, Config, GrapesJsEditor, TextAction, TextEditor } from './grapesjs.model';
-import { NgxGrapesjsService } from './ngx-grapesjs.service';
+import { CommandSender, NewsletterConfig, NewsletterEditor, TextAction, TextEditor } from './newsletter-editor.model';
+import { NgxNewsletterEditorService } from './ngx-newsletter-editor.service';
 import { Placeholder } from './placeholder.model';
 
 declare var grapesjs: {
@@ -9,10 +9,10 @@ declare var grapesjs: {
 };
 
 @Component({
-  selector: 'lib-ngx-grapesjs',
+  selector: 'lib-newsletter-editor',
   template: '<div id="gjs"></div>'
 })
-export class NgxGrapesjsComponent implements OnInit {
+export class NgxNewsletterEditorComponent implements OnInit {
 
   @Input()
   set template(content: string) {
@@ -24,8 +24,8 @@ export class NgxGrapesjsComponent implements OnInit {
     this.config.storageManager.id = prefix;
   }
 
-  private editor: GrapesJsEditor | undefined = undefined;
-  private config: Config = {
+  private editor: NewsletterEditor | undefined = undefined;
+  private config: NewsletterConfig = {
     container: '#gjs',
     plugins: ['gjs-preset-newsletter'],
     components: '',
@@ -42,11 +42,11 @@ export class NgxGrapesjsComponent implements OnInit {
     }
   };
 
-  constructor(private ngxGrapesJsService: NgxGrapesjsService) { }
+  constructor(private ngxNewsletterEditorService: NgxNewsletterEditorService) { }
 
   ngOnInit(): void {
-    // setup the default parser. It can be overriden by providing a custom implementation of the NgxGrapesjsService
-    this.config.parser.parserHtml = this.ngxGrapesJsService?.parserHtml;
+    // setup the default parser. It can be overriden by providing a custom implementation of the ngxNewsletterEditorService
+    this.config.parser.parserHtml = this.ngxNewsletterEditorService?.parserHtml;
     // initialize the editor
     this.editor = grapesjs.init(this.config);
 
@@ -98,12 +98,12 @@ export class NgxGrapesjsComponent implements OnInit {
     return this.editor?.runCommand?.('gjs-get-inlined-html');
   }
 
-  private undo = (editor: GrapesJsEditor, sender: CommandSender) => {
+  private undo = (editor: NewsletterEditor, sender: CommandSender) => {
     sender.set('active', 0);
     editor.UndoManager?.undo(1);
   };
 
-  private redo = (editor: GrapesJsEditor, sender: CommandSender) => {
+  private redo = (editor: NewsletterEditor, sender: CommandSender) => {
     sender.set('active', 0);
     editor.UndoManager?.redo(1);
   };
