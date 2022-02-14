@@ -9,7 +9,7 @@ export const ngAdd =
     const grapesCssAssetPaths = [];
     const grapesJsAssetPaths = [];
 
-    if (options.editorType === 'webpage editor') {
+    if (options.editorType === 'webpageEditor') {
 
       grapesCssAssetPaths.push(
         'node_modules/grapesjs/dist/css/grapes.min.css',

@@ -22,7 +22,7 @@ export function getProjectTargetOptions(
 export function addGrapesJsCssToTarget(
   projectName: string,
   targetName: 'test' | 'build',
-  assetPaths: string [],
+  assetPaths: string[],
   targetAsset: 'styles' | 'scripts'
 ) {
   return updateWorkspace(workspace => {

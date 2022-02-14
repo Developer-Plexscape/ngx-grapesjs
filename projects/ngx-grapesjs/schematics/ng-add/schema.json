@@ -14,13 +14,13 @@
     },
     "editorType": {
         "type": "string",
-        "default": "webpage editor",
+        "default": "webpageEditor",
         "x-prompt": {
           "message": "What type of editor would you like to use?",
           "type": "list",
           "items": [
-            { "value": "webpage editor", "label": "Webpage Editor" },
-            { "value": "newsletter editor",  "label": "Newsletter Editor" }
+            { "value": "webpageEditor", "label": "Webpage Editor" },
+            { "value": "newsletterEditor", "label": "Newsletter Editor" }
           ]
         }
     }
