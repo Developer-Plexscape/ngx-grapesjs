@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { NgxGrapesjsComponent } from 'ngx-grapesjs';
+import { NgxNewsletterEditorComponent } from 'ngx-grapesjs';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +14,7 @@ export class AppComponent {
     description: 'For Wings console only'
   }];
 
-  @ViewChild(NgxGrapesjsComponent) editor: NgxGrapesjsComponent | undefined;
+  @ViewChild(NgxNewsletterEditorComponent) editor: NgxNewsletterEditorComponent | undefined;
   getInlinedHtml(){
     console.log(this.editor?.getRawHtml());
   }

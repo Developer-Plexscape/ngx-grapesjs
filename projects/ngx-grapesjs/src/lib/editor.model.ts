@@ -1,6 +1,3 @@
-export interface Editor {
-}
-
 export interface Config {
   container: string;
   plugins: string[];

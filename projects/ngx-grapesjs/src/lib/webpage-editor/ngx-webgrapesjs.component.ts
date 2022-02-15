@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 
-import { Config, Editor } from '../editor.model';
+import { Config } from '../editor.model';
 
 declare var grapesjs: {
   init(options: any): {}
@@ -22,8 +22,8 @@ export class NgxWebpageEditorComponent implements OnInit {
     this.config.storageManager.id = prefix;
   }
 
-  editor: Editor | undefined = undefined;
-  private config: Config = {
+  editor: {} | undefined = undefined;
+  config: Config = {
     container: '#gjs',
     plugins: ['gjs-preset-webpage'],
     components: '',
