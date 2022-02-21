@@ -1,5 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 
+import { NgxEditorComponent } from '../editor.component';
+import { EDITOR_CONFIG } from '../editor.config';
 import { Config } from '../editor.model';
 
 declare var grapesjs: {
@@ -11,38 +13,24 @@ declare var grapesjs: {
   template: '<div id="gjs"></div>'
 })
 
-export class NgxWebpageEditorComponent implements OnInit {
+export class NgxWebpageEditorComponent extends NgxEditorComponent implements OnInit {
 
-  @Input()
-  set template(content: string) {
-    this.config.components = content;
-  }
-  @Input()
-  set storagePrefix(prefix: string) {
-    this.config.storageManager.id = prefix;
-  }
-
-  editor: {} | undefined = undefined;
-  config: Config = {
-    container: '#gjs',
+  extraConfig = {
     plugins: ['gjs-preset-webpage'],
-    components: '',
     pluginsOpts: {
       'gjs-preset-webpage': {
         modalTitleImport: 'Import template'
       }
-    },
-    storageManager: {
-      id: 'gjs-'
     }
   };
 
-  constructor() { }
+  constructor(@Inject(EDITOR_CONFIG) override baseConfig: Config) {
+    super(baseConfig);
+  }
 
-  ngOnInit() {
-
+  override ngOnInit() {
+    super.setEditorConfig(this.extraConfig);
     this.editor = grapesjs.init(this.config);
-
   }
 
 }

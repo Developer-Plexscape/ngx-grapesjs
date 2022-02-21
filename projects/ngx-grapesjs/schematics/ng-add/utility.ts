@@ -21,7 +21,6 @@ function getProjectTargetOptions(
 
 export function addGrapesJsCssToTarget(
   projectName: string,
-  targetName: 'test' | 'build',
   assetPaths: string[],
   targetAsset: 'styles' | 'scripts'
 ) {
@@ -37,7 +36,7 @@ export function addGrapesJsCssToTarget(
       return;
     }
 
-    const targetOptions = getProjectTargetOptions(project, targetName);
+    const targetOptions = getProjectTargetOptions(project, 'build');
     // This gets the current 'style' or 'scripts' options in loopable array
     const formattedExistingAssets = targetOptions[targetAsset] as (string | {input: string})[];
 

@@ -1,5 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Inject, Input, OnInit } from '@angular/core';
 
+import { NgxEditorComponent } from '../editor.component';
+import { EDITOR_CONFIG } from '../editor.config';
+import { Config } from '../editor.model';
 import { CommandSender, NewsletterConfig, NewsletterEditor, TextAction, TextEditor } from './newsletter-editor.model';
 import { NgxNewsletterEditorService } from './ngx-newsletter-editor.service';
 import { Placeholder } from './placeholder.model';
@@ -12,23 +15,13 @@ declare var grapesjs: {
   selector: 'lib-newsletter-editor',
   template: '<div id="gjs"></div>'
 })
-export class NgxNewsletterEditorComponent implements OnInit {
+export class NgxNewsletterEditorComponent extends NgxEditorComponent implements OnInit {
 
-  @Input()
-  set template(content: string) {
-    this.config.components = content;
-  }
   @Input() placeholders: Placeholder[] = [];
-  @Input()
-  set storagePrefix(prefix: string) {
-    this.config.storageManager.id = prefix;
-  }
 
-  private editor: NewsletterEditor | undefined = undefined;
-  private config: NewsletterConfig = {
-    container: '#gjs',
+  override editor: NewsletterEditor | undefined;
+  newsletterConfig: Partial<NewsletterConfig> = {
     plugins: ['gjs-preset-newsletter'],
-    components: '',
     pluginsOpts: {
       'gjs-preset-newsletter': {
         modalTitleImport: 'Import template'
@@ -36,18 +29,23 @@ export class NgxNewsletterEditorComponent implements OnInit {
     },
     parser: {
       parserHtml: {}
-    },
-    storageManager: {
-      id: 'gjs-'
     }
   };
 
-  constructor(private ngxNewsletterEditorService: NgxNewsletterEditorService) { }
+  constructor(private ngxNewsletterEditorService: NgxNewsletterEditorService,
+     @Inject(EDITOR_CONFIG) override baseConfig: Config) {
+    super(baseConfig);
+  }
 
-  ngOnInit(): void {
+  override ngOnInit(): void {
+
     // setup the default parser. It can be overriden by providing a custom implementation of the ngxNewsletterEditorService
-    this.config.parser.parserHtml = this.ngxNewsletterEditorService?.parserHtml;
-    // initialize the editor
+    if (this.newsletterConfig.parser) {
+      this.newsletterConfig.parser.parserHtml = this.ngxNewsletterEditorService?.parserHtml;
+    }
+
+    // setup the config object and initialize the editor
+    super.setEditorConfig(this.newsletterConfig);
     this.editor = grapesjs.init(this.config);
 
     // add undo/redo commands
