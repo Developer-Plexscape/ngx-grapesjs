@@ -15,7 +15,7 @@ declare var grapesjs: {
 
 export class NgxWebpageEditorComponent extends NgxEditorComponent implements OnInit {
 
-  extraConfig = {
+  webpageConfig: Partial<Config> = {
     plugins: ['gjs-preset-webpage'],
     pluginsOpts: {
       'gjs-preset-webpage': {
@@ -29,7 +29,7 @@ export class NgxWebpageEditorComponent extends NgxEditorComponent implements OnI
   }
 
   override ngOnInit() {
-    super.setEditorConfig(this.extraConfig);
+    super.setEditorConfig(this.webpageConfig);
     this.editor = grapesjs.init(this.config);
   }
 

@@ -2,7 +2,7 @@ import { Component, Inject, Input, OnInit } from '@angular/core';
 
 import { EDITOR_CONFIG } from './editor.config';
 import { Config } from './editor.model';
-import { NewsletterConfig, NewsletterEditor } from './newsletter-editor/newsletter-editor.model';
+import { NewsletterConfig } from './newsletter-editor/newsletter-editor.model';
 
 declare var grapesjs: {
   init(options: any): {}
@@ -27,8 +27,8 @@ export class NgxEditorComponent implements OnInit {
     }
   }
 
-  editor: {} | NewsletterEditor | undefined = undefined;
-  config: NewsletterConfig | Config | undefined = undefined;
+  editor: {} | undefined = undefined;
+  config: Config | undefined = undefined;
 
   constructor(@Inject(EDITOR_CONFIG) public baseConfig: Config) { }
 
@@ -38,12 +38,11 @@ export class NgxEditorComponent implements OnInit {
 
   }
 
-  setEditorConfig(extraConfig: Partial<NewsletterConfig> | Partial<Config>) {
+  setEditorConfig(extraConfig: Partial<NewsletterConfig>) {
     this.config = {
       ...this.baseConfig,
       ...extraConfig
     };
-    console.log('setEditorConfig()', this.baseConfig, extraConfig);
   }
 
 }
