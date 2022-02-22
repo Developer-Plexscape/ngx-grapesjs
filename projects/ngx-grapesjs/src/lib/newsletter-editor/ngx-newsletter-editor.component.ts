@@ -1,15 +1,9 @@
-import { Component, Inject, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 import { NgxEditorComponent } from '../editor.component';
-import { EDITOR_CONFIG } from '../editor.config';
-import { Config } from '../editor.model';
 import { CommandSender, NewsletterConfig, NewsletterEditor, TextAction, TextEditor } from './newsletter-editor.model';
 import { NgxNewsletterEditorService } from './ngx-newsletter-editor.service';
 import { Placeholder } from './placeholder.model';
-
-declare var grapesjs: {
-  init(options: any): {}
-};
 
 @Component({
   selector: 'lib-newsletter-editor',
@@ -19,8 +13,10 @@ export class NgxNewsletterEditorComponent extends NgxEditorComponent implements 
 
   @Input() placeholders: Placeholder[] = [];
 
-  override editor: NewsletterEditor | undefined;
-  newsletterConfig: Partial<NewsletterConfig> = {
+  private editor: NewsletterEditor | undefined;
+
+  private newsletterConfig: Partial<NewsletterConfig> = {
+    container: '#gjs',
     plugins: ['gjs-preset-newsletter'],
     pluginsOpts: {
       'gjs-preset-newsletter': {
@@ -32,12 +28,11 @@ export class NgxNewsletterEditorComponent extends NgxEditorComponent implements 
     }
   };
 
-  constructor(private ngxNewsletterEditorService: NgxNewsletterEditorService,
-     @Inject(EDITOR_CONFIG) override baseConfig: Config) {
-    super(baseConfig);
+  constructor(private ngxNewsletterEditorService: NgxNewsletterEditorService) {
+    super();
   }
 
-  override ngOnInit(): void {
+  ngOnInit(): void {
 
     // setup the default parser. It can be overriden by providing a custom implementation of the ngxNewsletterEditorService
     if (this.newsletterConfig.parser) {
@@ -45,11 +40,10 @@ export class NgxNewsletterEditorComponent extends NgxEditorComponent implements 
     }
 
     // setup the config object and initialize the editor
-    super.setEditorConfig(this.newsletterConfig);
-    this.editor = grapesjs.init(this.config);
+    this.editor = this.setup(this.newsletterConfig);
 
     // add undo/redo commands
-    this.editor.Panels?.addButton('options', [
+    this.editor?.Panels?.addButton('options', [
       {
         id: 'undo',
         className: 'fa fa-undo',

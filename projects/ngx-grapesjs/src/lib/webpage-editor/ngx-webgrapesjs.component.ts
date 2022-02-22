@@ -1,12 +1,7 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { NgxEditorComponent } from '../editor.component';
-import { EDITOR_CONFIG } from '../editor.config';
 import { Config } from '../editor.model';
-
-declare var grapesjs: {
-  init(options: any): {}
-};
 
 @Component({
   selector: 'lib-webpage-editor',
@@ -15,7 +10,8 @@ declare var grapesjs: {
 
 export class NgxWebpageEditorComponent extends NgxEditorComponent implements OnInit {
 
-  webpageConfig: Partial<Config> = {
+  private webpageConfig: Partial<Config> = {
+    container: '#gjs',
     plugins: ['gjs-preset-webpage'],
     pluginsOpts: {
       'gjs-preset-webpage': {
@@ -24,13 +20,10 @@ export class NgxWebpageEditorComponent extends NgxEditorComponent implements OnI
     }
   };
 
-  constructor(@Inject(EDITOR_CONFIG) override baseConfig: Config) {
-    super(baseConfig);
-  }
+  ngOnInit() {
 
-  override ngOnInit() {
-    super.setEditorConfig(this.webpageConfig);
-    this.editor = grapesjs.init(this.config);
+    this.setup(this.webpageConfig);
+
   }
 
 }

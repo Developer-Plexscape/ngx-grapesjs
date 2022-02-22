@@ -1,48 +1,37 @@
-import { Component, Inject, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
-import { EDITOR_CONFIG } from './editor.config';
 import { Config } from './editor.model';
-import { NewsletterConfig } from './newsletter-editor/newsletter-editor.model';
 
 declare var grapesjs: {
   init(options: any): {}
 };
 
 @Component({
-  template: ''
+  template: '<div id="gjs"></div>'
 })
 
-export class NgxEditorComponent implements OnInit {
+export class NgxEditorComponent {
 
-  @Input()
-  set template(content: string) {
-    if (this.config) {
-      this.config.components = content;
-    }
-  }
-  @Input()
-  set storagePrefix(prefix: string) {
-    if (this.config) {
-      this.config.storageManager.id = prefix;
-    }
-  }
+  @Input() template: string = '';
+  @Input() storagePrefix: string = 'gjs-';
 
-  editor: {} | undefined = undefined;
-  config: Config | undefined = undefined;
+  setup(customConfig: Partial<Config>) {
 
-  constructor(@Inject(EDITOR_CONFIG) public baseConfig: Config) { }
-
-  ngOnInit() {
-
-    this.editor = grapesjs.init(this.config);
-
-  }
-
-  setEditorConfig(extraConfig: Partial<NewsletterConfig>) {
-    this.config = {
-      ...this.baseConfig,
-      ...extraConfig
+    const config: Config = {
+      container: '',
+      plugins: [],
+      components: this.template,
+      pluginsOpts: {},
+      storageManager: {
+        id: this.storagePrefix
+      }
     };
+
+    return grapesjs.init({
+      ...config,
+      ...customConfig
+    });
+
   }
 
 }
