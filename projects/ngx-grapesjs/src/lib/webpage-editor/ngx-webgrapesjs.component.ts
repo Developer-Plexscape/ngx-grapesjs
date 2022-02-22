@@ -21,9 +21,7 @@ export class NgxWebpageEditorComponent extends NgxEditorComponent implements OnI
   };
 
   ngOnInit() {
-
     this.setup(this.webpageConfig);
-
   }
 
 }

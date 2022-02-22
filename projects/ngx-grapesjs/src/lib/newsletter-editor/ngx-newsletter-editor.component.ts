@@ -14,7 +14,6 @@ export class NgxNewsletterEditorComponent extends NgxEditorComponent implements 
   @Input() placeholders: Placeholder[] = [];
 
   private editor: NewsletterEditor | undefined;
-
   private newsletterConfig: Partial<NewsletterConfig> = {
     container: '#gjs',
     plugins: ['gjs-preset-newsletter'],

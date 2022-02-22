@@ -7,21 +7,18 @@ declare var grapesjs: {
 };
 
 @Component({
-  template: '<div id="gjs"></div>'
+  template: ''
 })
 
 export class NgxEditorComponent {
 
-  @Input() template: string = '';
-  @Input() storagePrefix: string = 'gjs-';
+  @Input() template = '';
+  @Input() storagePrefix = 'gjs-';
 
   setup(customConfig: Partial<Config>) {
 
-    const config: Config = {
-      container: '',
-      plugins: [],
+    const config: Partial<Config> = {
       components: this.template,
-      pluginsOpts: {},
       storageManager: {
         id: this.storagePrefix
       }
