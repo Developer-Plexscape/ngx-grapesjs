@@ -22,6 +22,7 @@
     "@angular/router": "~13.0.0",
     "grapesjs": "^0.17.29",
     "grapesjs-preset-newsletter": "^0.2.21",
+    "grapesjs-preset-webpage": "^0.1.11",
     "rxjs": "~7.4.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"

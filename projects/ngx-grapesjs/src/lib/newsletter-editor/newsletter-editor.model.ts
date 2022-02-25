@@ -1,4 +1,6 @@
-export interface GrapesJsEditor {
+import { Config } from '../editor.model';
+
+export interface NewsletterEditor {
   Panels?: Panels;
   RichTextEditor?: TextEditor;
   Commands?: Commands;
@@ -46,16 +48,9 @@ export interface TextAction {
   };
 }
 
-export interface Config {
-  container: string;
-  plugins: string[];
-  components: string;
-  pluginsOpts: Record<string, any>;
+export interface NewsletterConfig extends Config {
   parser: {
     parserHtml: {}
-  };
-  storageManager: {
-    id: string
   };
 }
 

@@ -1,34 +1,22 @@
 import { Component, Input, OnInit } from '@angular/core';
 
-import { CommandSender, Config, GrapesJsEditor, TextAction, TextEditor } from './grapesjs.model';
-import { NgxGrapesjsService } from './ngx-grapesjs.service';
+import { NgxEditorComponent } from '../editor.component';
+import { CommandSender, NewsletterConfig, NewsletterEditor, TextAction, TextEditor } from './newsletter-editor.model';
+import { NgxNewsletterEditorService } from './ngx-newsletter-editor.service';
 import { Placeholder } from './placeholder.model';
 
-declare var grapesjs: {
-  init(options: any): {}
-};
-
 @Component({
-  selector: 'lib-ngx-grapesjs',
+  selector: 'lib-newsletter-editor',
   template: '<div id="gjs"></div>'
 })
-export class NgxGrapesjsComponent implements OnInit {
+export class NgxNewsletterEditorComponent extends NgxEditorComponent implements OnInit {
 
-  @Input()
-  set template(content: string) {
-    this.config.components = content;
-  }
   @Input() placeholders: Placeholder[] = [];
-  @Input()
-  set storagePrefix(prefix: string) {
-    this.config.storageManager.id = prefix;
-  }
 
-  private editor: GrapesJsEditor | undefined = undefined;
-  private config: Config = {
+  private editor: NewsletterEditor | undefined;
+  private newsletterConfig: Partial<NewsletterConfig> = {
     container: '#gjs',
     plugins: ['gjs-preset-newsletter'],
-    components: '',
     pluginsOpts: {
       'gjs-preset-newsletter': {
         modalTitleImport: 'Import template'
@@ -36,22 +24,23 @@ export class NgxGrapesjsComponent implements OnInit {
     },
     parser: {
       parserHtml: {}
-    },
-    storageManager: {
-      id: 'gjs-'
     }
   };
 
-  constructor(private ngxGrapesJsService: NgxGrapesjsService) { }
+  constructor(private ngxNewsletterEditorService: NgxNewsletterEditorService) {
+    super();
+  }
 
-  ngOnInit(): void {
-    // setup the default parser. It can be overriden by providing a custom implementation of the NgxGrapesjsService
-    this.config.parser.parserHtml = this.ngxGrapesJsService?.parserHtml;
-    // initialize the editor
-    this.editor = grapesjs.init(this.config);
+  ngOnInit() {
 
-    // add undo/redo commands
-    this.editor.Panels?.addButton('options', [
+    // setup the default parser. It can be overriden by providing a custom implementation of the ngxNewsletterEditorService
+    if (this.newsletterConfig.parser) {
+      this.newsletterConfig.parser.parserHtml = this.ngxNewsletterEditorService?.parserHtml;
+    }
+
+    this.editor = this.setup(this.newsletterConfig);
+
+    this.editor?.Panels?.addButton('options', [
       {
         id: 'undo',
         className: 'fa fa-undo',
@@ -98,12 +87,12 @@ export class NgxGrapesjsComponent implements OnInit {
     return this.editor?.runCommand?.('gjs-get-inlined-html');
   }
 
-  private undo = (editor: GrapesJsEditor, sender: CommandSender) => {
+  private undo = (editor: NewsletterEditor, sender: CommandSender) => {
     sender.set('active', 0);
     editor.UndoManager?.undo(1);
   };
 
-  private redo = (editor: GrapesJsEditor, sender: CommandSender) => {
+  private redo = (editor: NewsletterEditor, sender: CommandSender) => {
     sender.set('active', 0);
     editor.UndoManager?.redo(1);
   };
