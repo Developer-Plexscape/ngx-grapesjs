@@ -31,17 +31,15 @@ export class NgxNewsletterEditorComponent extends NgxEditorComponent implements 
     super();
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
 
     // setup the default parser. It can be overriden by providing a custom implementation of the ngxNewsletterEditorService
     if (this.newsletterConfig.parser) {
       this.newsletterConfig.parser.parserHtml = this.ngxNewsletterEditorService?.parserHtml;
     }
 
-    // setup the config object and initialize the editor
     this.editor = this.setup(this.newsletterConfig);
 
-    // add undo/redo commands
     this.editor?.Panels?.addButton('options', [
       {
         id: 'undo',
