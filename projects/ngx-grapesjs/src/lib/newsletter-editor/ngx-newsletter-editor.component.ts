@@ -37,8 +37,26 @@ export class NgxNewsletterEditorComponent extends NgxEditorComponent implements 
       this.newsletterConfig.parser.parserHtml = this.ngxNewsletterEditorService?.parserHtml;
     }
 
+    this.addButtons();
+    this.addPlaceholders();
     this.editor = this.setup(this.newsletterConfig);
+  }
 
+  getRawHtml(): string | undefined {
+    return this.editor?.runCommand?.('gjs-get-inlined-html');
+  }
+
+  private undo = (editor: NewsletterEditor, sender: CommandSender) => {
+    sender.set('active', 0);
+    editor.UndoManager?.undo(1);
+  };
+
+  private redo = (editor: NewsletterEditor, sender: CommandSender) => {
+    sender.set('active', 0);
+    editor.UndoManager?.redo(1);
+  };
+
+  private addButtons() {
     this.editor?.Panels?.addButton('options', [
       {
         id: 'undo',
@@ -57,7 +75,9 @@ export class NgxNewsletterEditorComponent extends NgxEditorComponent implements 
         }
       }
     ]);
+  }
 
+  private addPlaceholders() {
     if (this.placeholders.length) {
       const placeholderSelectOptions = this.placeholders.map(placeholder =>
         `<option
@@ -70,30 +90,18 @@ export class NgxNewsletterEditorComponent extends NgxEditorComponent implements 
         ${placeholder.name}
         </option>`
       );
-      this.editor.RichTextEditor?.add('placeholders', {
+
+      this.editor?.RichTextEditor?.add('placeholders', {
         icon: `<select class="gjs-field gjs-two-color">
                 <option class="gjs-one-color" value="">- Select placeholder -</option>
                 ${placeholderSelectOptions}
-              </select>`,
+              </select>
+        `,
         event: 'change',
         result: (rte: TextEditor, action: TextAction) => rte.insertHTML(action.btn.firstChild.value),
         update: (_: TextEditor, action: TextAction) => action.btn.firstChild.value = ''
       });
     }
   }
-
-  getRawHtml(): string | undefined {
-    return this.editor?.runCommand?.('gjs-get-inlined-html');
-  }
-
-  private undo = (editor: NewsletterEditor, sender: CommandSender) => {
-    sender.set('active', 0);
-    editor.UndoManager?.undo(1);
-  };
-
-  private redo = (editor: NewsletterEditor, sender: CommandSender) => {
-    sender.set('active', 0);
-    editor.UndoManager?.redo(1);
-  };
 
 }
