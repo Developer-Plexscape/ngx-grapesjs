@@ -81,7 +81,8 @@
         "padded-blocks": [
           "error",
           {
-            "classes": "always"
+            "classes": "always",
+            "blocks": "never"
           }
         ],
         "object-curly-spacing": [
