@@ -32,7 +32,6 @@ export class NgxNewsletterEditorComponent extends NgxEditorComponent implements 
   }
 
   ngOnInit() {
-
     // setup the default parser. It can be overriden by providing a custom implementation of the ngxNewsletterEditorService
     if (this.newsletterConfig.parser) {
       this.newsletterConfig.parser.parserHtml = this.ngxNewsletterEditorService?.parserHtml;

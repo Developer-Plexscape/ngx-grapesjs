@@ -16,7 +16,6 @@ export class NgxEditorComponent {
   @Input() storagePrefix = 'gjs-';
 
   setup(customConfig: Partial<Config>) {
-
     const config: Partial<Config> = {
       components: this.template,
       storageManager: {
@@ -28,7 +27,6 @@ export class NgxEditorComponent {
       ...config,
       ...customConfig
     });
-
   }
 
 }

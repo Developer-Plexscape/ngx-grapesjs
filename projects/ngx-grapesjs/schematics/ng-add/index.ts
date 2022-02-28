@@ -5,7 +5,6 @@ import { addDependencies, addGrapesJsCssToTarget } from './utility';
 
 export const ngAdd =
   (options: Schema) => async () => {
-
     const baseGrapesjsPath = 'node_modules/grapesjs/dist';
     const baseGrapesjsWebpagePath = 'node_modules/grapesjs-preset-webpage/dist';
     const baseGrapesjsNewsletterPath = 'node_modules/grapesjs-preset-newsletter/dist';
@@ -14,7 +13,6 @@ export const ngAdd =
     const grapesJsAssetPaths = [`${baseGrapesjsPath}/grapes.min.js`];
 
     if (options.editorType === 'webpageEditor') {
-
       grapesCssAssetPaths.push(
         `${baseGrapesjsWebpagePath}/grapesjs-preset-newsletter.css`
       );

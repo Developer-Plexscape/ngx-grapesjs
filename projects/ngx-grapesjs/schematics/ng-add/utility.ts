@@ -25,7 +25,6 @@ export function addGrapesJsCssToTarget(
   targetAsset: 'styles' | 'scripts'
 ) {
   return updateWorkspace(workspace => {
-
     if (!projectName && typeof workspace.extensions['defaultProject'] === 'string') {
       projectName = workspace.extensions['defaultProject'];
     }
@@ -51,7 +50,6 @@ export function addGrapesJsCssToTarget(
           formattedExistingAssets.push(assetPath);
         }
       });
-
     }
   });
 }
