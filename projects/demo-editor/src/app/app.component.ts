@@ -1,21 +1,16 @@
-import { Component, ViewChild } from '@angular/core';
-import { NgxNewsletterEditorComponent } from 'ngx-grapesjs';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html'
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'demo-editor';
-  template = '<div>Test Email Template</div>'
+  editorMode = '';
+  template = '<span>This is a test content</span>'
   placeholders = [{
-    value: 'UserName',
-    name: 'Agent name',
-    description: 'For Wings console only'
+    value: 'MyPlaceholder',
+    name: 'Custom placeholder',
+    description: 'This is a custom placeholder'
   }];
-
-  @ViewChild(NgxNewsletterEditorComponent) editor: NgxNewsletterEditorComponent | undefined;
-  getInlinedHtml(){
-    console.log(this.editor?.getRawHtml());
-  }
 }

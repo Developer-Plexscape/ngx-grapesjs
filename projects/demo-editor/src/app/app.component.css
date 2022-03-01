@@ -1,0 +1,12 @@
+p,
+label {
+  font: 1rem 'Fira Sans', sans-serif;
+}
+
+input {
+  margin: .4rem;
+}
+
+.editor {
+  margin: 15px 0;
+}
