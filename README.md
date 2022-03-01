@@ -1,27 +1,55 @@
-# NgxGrapesjs
+# Welcome to ngx-grapesjs 👋
+[![Documentation](https://img.shields.io/badge/documentation-yes-brightgreen.svg)](https://github.com/Developer-Plexscape/ngx-grapesjs/blob/master/projects/ngx-grapesjs/README.md)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/Developer-Plexscape/ngx-grapesjs/blob/master/LICENSE)
+[![Twitter: plexearth](https://img.shields.io/twitter/follow/plexearth.svg?style=social)](https://twitter.com/plexearth)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.4.
+> Angular library for GrapesJS
 
-## Development server
+## Getting started
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+This repository contains the following projects:
 
-## Code scaffolding
+* [ngx-grapesjs](https://github.com/Developer-Plexscape/ngx-grapesjs/tree/master/projects/ngx-grapesjs): a wrapper library for the GrapesJS editor https://grapesjs.com/
+* [demo app](https://github.com/Developer-Plexscape/ngx-grapesjs/tree/master/projects/demo-editor): a demo application that showcases the usage of the library
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Install
 
-## Build
+```sh
+npm install
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Usage
 
-## Running unit tests
+```sh
+npm run build
+npm start
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Author
 
-## Running end-to-end tests
+👤 **Plexscape**
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+* Website: http://www.plexearth.com
+* Twitter: [@plexearth](https://twitter.com/plexearth)
+* Github: [@Developer-Plexscape](https://github.com/Developer-Plexscape)
+* LinkedIn: [@plexearth](https://linkedin.com/company/plexearth)
 
-## Further help
+## 🤝 Contributing
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Contributions, issues and feature requests are welcome!
+
+Feel free to check [issues page](https://github.com/Developer-Plexscape/ngx-grapesjs/issues). You can also take a look at the [contributing guide](https://github.com/Developer-Plexscape/ngx-grapesjs/blob/master/CONTRIBUTING.md).
+
+## Show your support
+
+Give a ⭐️ if this project helped you!
+
+
+## 📝 License
+
+Copyright © 2022 [Plexscape](https://github.com/Developer-Plexscape).
+
+This project is [MIT](https://github.com/Developer-Plexscape/ngx-grapesjs/blob/master/LICENSE) licensed.
+
+***
+_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
