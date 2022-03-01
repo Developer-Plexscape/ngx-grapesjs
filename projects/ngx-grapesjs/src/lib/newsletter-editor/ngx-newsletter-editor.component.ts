@@ -37,9 +37,10 @@ export class NgxNewsletterEditorComponent extends NgxEditorComponent implements 
       this.newsletterConfig.parser.parserHtml = this.ngxNewsletterEditorService?.parserHtml;
     }
 
+    this.editor = this.setup(this.newsletterConfig);
+
     this.addButtons();
     this.addPlaceholders();
-    this.editor = this.setup(this.newsletterConfig);
   }
 
   getRawHtml(): string | undefined {

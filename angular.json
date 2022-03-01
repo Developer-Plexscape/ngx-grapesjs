@@ -69,11 +69,13 @@
             "styles": [
               "projects/demo-editor/src/styles.css",
               "node_modules/grapesjs/dist/css/grapes.min.css",
-              "node_modules/grapesjs-preset-newsletter/dist/grapesjs-preset-newsletter.css"
+              "node_modules/grapesjs-preset-newsletter/dist/grapesjs-preset-newsletter.css",
+              "node_modules/grapesjs-preset-webpage/dist/grapesjs-preset-webpage.min.css"
             ],
             "scripts": [
               "node_modules/grapesjs/dist/grapes.min.js",
-              "node_modules/grapesjs-preset-newsletter/dist/grapesjs-preset-newsletter.min.js"
+              "node_modules/grapesjs-preset-newsletter/dist/grapesjs-preset-newsletter.min.js",
+              "node_modules/grapesjs-preset-webpage/dist/grapesjs-preset-webpage.min.js"
             ]
           },
           "configurations": {
