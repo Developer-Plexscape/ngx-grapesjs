@@ -21,7 +21,7 @@ export const ngAdd =
       );
     } else {
       grapesCssAssetPaths.push(
-        `${baseGrapesjsWebpagePath}/grapesjs-preset-newsletter.css`
+        `${baseGrapesjsNewsletterPath}/grapesjs-preset-newsletter.css`
       );
       grapesJsAssetPaths.push(
         `${baseGrapesjsWebpagePath}/grapesjs-preset-newsletter.min.js`
