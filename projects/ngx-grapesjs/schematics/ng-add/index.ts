@@ -17,7 +17,7 @@ export const ngAdd =
         `${baseGrapesjsWebpagePath}/grapesjs-preset-webpage.min.css`
       );
       grapesJsAssetPaths.push(
-        `${baseGrapesjsNewsletterPath}/grapesjs-preset-webpage.min.js`
+        `${baseGrapesjsWebpagePath}/grapesjs-preset-webpage.min.js`
       );
     } else {
       grapesCssAssetPaths.push(
