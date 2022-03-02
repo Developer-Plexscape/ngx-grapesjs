@@ -25,7 +25,7 @@ Ngx-grapesjs is an Angular library that wraps basic functionality of the [Grapes
 3. Install **ngx-grapesjs**
 
   ```sh
-    ng add @developer-plexscape/ngx-grapesjs
+    ng add ngx-grapesjs
   ```
 
 The previous command will ask you which editor mode you want to use and it will make all the necessary modifications in the Angular workspace so that you can get started.
@@ -35,7 +35,7 @@ The previous command will ask you which editor mode you want to use and it will 
  1. Import `NgxGrapesjsModule` from the `ngx-grapesjs` library:
 
     ```ts
-      import { NgxGrapesjsModule } from '@developer-plexscape/ngx-grapesjs';
+      import { NgxGrapesjsModule } from 'ngx-grapesjs';
     ```
 
 2. Add `NgxGrapesjsModule` into the `imports` array of your Angular module:
