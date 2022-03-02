@@ -9,7 +9,7 @@ export const ngAdd =
     const baseGrapesjsWebpagePath = 'node_modules/grapesjs-preset-webpage/dist';
     const baseGrapesjsNewsletterPath = 'node_modules/grapesjs-preset-newsletter/dist';
 
-    const grapesCssAssetPaths = [`${baseGrapesjsPath}/grapes.min.css`];
+    const grapesCssAssetPaths = [`${baseGrapesjsPath}/css/grapes.min.css`];
     const grapesJsAssetPaths = [`${baseGrapesjsPath}/grapes.min.js`];
 
     if (options.editorType === 'webpageEditor') {
