@@ -38,7 +38,7 @@ npm start
 
 Contributions, issues and feature requests are welcome!
 
-Feel free to check [issues page](https://github.com/Developer-Plexscape/ngx-grapesjs/issues). You can also take a look at the [contributing guide](https://github.com/Developer-Plexscape/ngx-grapesjs/blob/master/CONTRIBUTING.md).
+Feel free to check [issues page](https://github.com/Developer-Plexscape/ngx-grapesjs/issues).
 
 ## Show your support
 
