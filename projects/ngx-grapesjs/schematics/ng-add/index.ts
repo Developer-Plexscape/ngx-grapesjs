@@ -14,7 +14,7 @@ export const ngAdd =
 
     if (options.editorType === 'webpageEditor') {
       grapesCssAssetPaths.push(
-        `${baseGrapesjsNewsletterPath}/grapesjs-preset-webpage.min.css`
+        `${baseGrapesjsWebpagePath}/grapesjs-preset-webpage.min.css`
       );
       grapesJsAssetPaths.push(
         `${baseGrapesjsNewsletterPath}/grapesjs-preset-webpage.min.js`
