@@ -14,17 +14,17 @@ export const ngAdd =
 
     if (options.editorType === 'webpageEditor') {
       grapesCssAssetPaths.push(
-        `${baseGrapesjsWebpagePath}/grapesjs-preset-newsletter.css`
-      );
-      grapesJsAssetPaths.push(
-        `${baseGrapesjsWebpagePath}/grapesjs-preset-newsletter.min.js`
-      );
-    } else {
-      grapesCssAssetPaths.push(
         `${baseGrapesjsNewsletterPath}/grapesjs-preset-webpage.min.css`
       );
       grapesJsAssetPaths.push(
         `${baseGrapesjsNewsletterPath}/grapesjs-preset-webpage.min.js`
+      );
+    } else {
+      grapesCssAssetPaths.push(
+        `${baseGrapesjsWebpagePath}/grapesjs-preset-newsletter.css`
+      );
+      grapesJsAssetPaths.push(
+        `${baseGrapesjsWebpagePath}/grapesjs-preset-newsletter.min.js`
       );
     }
     return chain([
