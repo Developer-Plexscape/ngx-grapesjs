@@ -31,6 +31,7 @@
   },
   "devDependencies": {
     "copyfiles": "file:../../node_modules/copyfiles",
+    "standard-version": "^9.3.2",
     "typescript": "file:../../node_modules/typescript"
   }
 }
