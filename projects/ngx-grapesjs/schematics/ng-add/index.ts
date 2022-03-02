@@ -9,22 +9,22 @@ export const ngAdd =
     const baseGrapesjsWebpagePath = 'node_modules/grapesjs-preset-webpage/dist';
     const baseGrapesjsNewsletterPath = 'node_modules/grapesjs-preset-newsletter/dist';
 
-    const grapesCssAssetPaths = [`${baseGrapesjsPath}/grapes.min.css`];
+    const grapesCssAssetPaths = [`${baseGrapesjsPath}/css/grapes.min.css`];
     const grapesJsAssetPaths = [`${baseGrapesjsPath}/grapes.min.js`];
 
     if (options.editorType === 'webpageEditor') {
       grapesCssAssetPaths.push(
-        `${baseGrapesjsWebpagePath}/grapesjs-preset-newsletter.css`
+        `${baseGrapesjsWebpagePath}/grapesjs-preset-webpage.min.css`
       );
       grapesJsAssetPaths.push(
-        `${baseGrapesjsWebpagePath}/grapesjs-preset-newsletter.min.js`
+        `${baseGrapesjsWebpagePath}/grapesjs-preset-webpage.min.js`
       );
     } else {
       grapesCssAssetPaths.push(
-        `${baseGrapesjsNewsletterPath}/grapesjs-preset-webpage.min.css`
+        `${baseGrapesjsNewsletterPath}/grapesjs-preset-newsletter.css`
       );
       grapesJsAssetPaths.push(
-        `${baseGrapesjsNewsletterPath}/grapesjs-preset-webpage.min.js`
+        `${baseGrapesjsNewsletterPath}/grapesjs-preset-newsletter.min.js`
       );
     }
     return chain([
