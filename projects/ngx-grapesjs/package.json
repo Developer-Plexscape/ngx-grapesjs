@@ -27,7 +27,7 @@
   "homepage": "https://github.com/Developer-Plexscape/ngx-grapesjs#readme",
   "schematics": "./schematics/collection.json",
   "ng-add": {
-    "save": "devDependencies"
+    "save": "dependencies"
   },
   "devDependencies": {
     "copyfiles": "file:../../node_modules/copyfiles",
