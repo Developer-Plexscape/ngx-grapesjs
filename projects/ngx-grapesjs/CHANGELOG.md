@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/Developer-Plexscape/ngx-grapesjs/compare/1.0.0...1.1.0) (2022-03-09)
+
+
+### Features
+
+* use unique component prefix ([bace22a](https://github.com/Developer-Plexscape/ngx-grapesjs/commit/bace22a5c208ce13f548a5669abd62038d29faec)), closes [#12](https://github.com/Developer-Plexscape/ngx-grapesjs/issues/12)
+
+
+### Bug Fixes
+
+* export `Placeholder` model from public API ([9e9cc96](https://github.com/Developer-Plexscape/ngx-grapesjs/commit/9e9cc96421ace4444ce818ba4e17f4265b66bce7)), closes [#11](https://github.com/Developer-Plexscape/ngx-grapesjs/issues/11)
+
 ## 1.0.0 (2022-03-02)
 
 
