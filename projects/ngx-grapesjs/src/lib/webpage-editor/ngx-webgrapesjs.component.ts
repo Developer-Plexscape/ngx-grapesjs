@@ -4,7 +4,7 @@ import { NgxEditorComponent } from '../editor.component';
 import { Config } from '../editor.model';
 
 @Component({
-  selector: 'lib-webpage-editor',
+  selector: 'ngx-grapes-webpage-editor',
   template: '<div id="gjs"></div>'
 })
 

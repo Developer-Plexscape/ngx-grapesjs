@@ -56,13 +56,13 @@ The previous command will ask you which editor mode you want to use and it will 
     For webpage mode:
 
     ```html
-      <lib-webpage-editor></lib-webpage-editor>
+      <ngx-grapes-webpage-editor></ngx-grapes-webpage-editor>
     ```
 
     For newsletter mode:
 
     ```html
-      <lib-newsletter-editor></lib-newsletter-editor>
+      <ngx-grapes-newsletter-editor></ngx-grapes-newsletter-editor>
     ```
 
 Both editors support passing the following input properties:
