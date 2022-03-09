@@ -31,7 +31,7 @@
           "error",
           {
             "type": "element",
-            "prefix": "lib",
+            "prefix": "ngx-grapes",
             "style": "kebab-case"
           }
         ],
