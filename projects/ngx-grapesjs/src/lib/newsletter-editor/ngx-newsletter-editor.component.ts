@@ -6,7 +6,7 @@ import { NgxNewsletterEditorService } from './ngx-newsletter-editor.service';
 import { Placeholder } from './placeholder.model';
 
 @Component({
-  selector: 'lib-newsletter-editor',
+  selector: 'ngx-grapes-newsletter-editor',
   template: '<div id="gjs"></div>'
 })
 export class NgxNewsletterEditorComponent extends NgxEditorComponent implements OnInit {
