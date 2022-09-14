@@ -2,7 +2,7 @@ import { JsonValue } from '@angular-devkit/core';
 import { ProjectDefinition } from '@angular-devkit/core/src/workspace';
 import { SchematicsException, Rule, Tree, SchematicContext } from '@angular-devkit/schematics';
 import { NodePackageInstallTask } from '@angular-devkit/schematics/tasks';
-import { updateWorkspace } from '@schematics/angular/utility/workspace';
+import { updateWorkspace } from '@schematics/angular/utility';
 
 function getProjectTargetOptions(
   project: ProjectDefinition,
@@ -25,14 +25,12 @@ export function addGrapesJsCssToTarget(
   targetAsset: 'styles' | 'scripts'
 ) {
   return updateWorkspace(workspace => {
-    if (!projectName && typeof workspace.extensions['defaultProject'] === 'string') {
-      projectName = workspace.extensions['defaultProject'];
-    }
-
     const project = workspace.projects.get(projectName);
 
     if (!project) {
-      return;
+      throw new SchematicsException(
+        'The specified Angular project is not defined in this workspace.'
+      );
     }
 
     const targetOptions = getProjectTargetOptions(project, 'build');
