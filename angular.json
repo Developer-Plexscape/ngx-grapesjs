@@ -68,14 +68,13 @@
             ],
             "styles": [
               "projects/demo-editor/src/styles.css",
-              "node_modules/grapesjs/dist/css/grapes.min.css",
-              "node_modules/grapesjs-preset-newsletter/dist/grapesjs-preset-newsletter.css",
-              "node_modules/grapesjs-preset-webpage/dist/grapesjs-preset-webpage.min.css"
+              "node_modules/grapesjs/dist/css/grapes.min.css"
             ],
             "scripts": [
               "node_modules/grapesjs/dist/grapes.min.js",
-              "node_modules/grapesjs-preset-newsletter/dist/grapesjs-preset-newsletter.min.js",
-              "node_modules/grapesjs-preset-webpage/dist/grapesjs-preset-webpage.min.js"
+              "node_modules/grapesjs-preset-newsletter/dist/index.js",
+              "node_modules/grapesjs-preset-webpage/dist/index.js",
+              "node_modules/grapesjs-blocks-basic/dist/index.js"
             ]
           },
           "configurations": {
@@ -147,6 +146,14 @@
           }
         }
       }
+    }
+  },
+  "schematics": {
+    "@angular-eslint/schematics:application": {
+      "setParserOptionsProject": true
+    },
+    "@angular-eslint/schematics:library": {
+      "setParserOptionsProject": true
     }
   }
 }

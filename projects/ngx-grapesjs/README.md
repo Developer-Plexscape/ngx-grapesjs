@@ -13,7 +13,7 @@ Ngx-grapesjs is an Angular library that wraps basic functionality of the [Grapes
   For webpage mode:
 
   ```sh
-    npm install grapesjs-preset-webpage
+    npm install grapesjs-preset-webpage grapesjs-blocks-basic
   ```
 
   For newsletter mode:

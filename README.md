@@ -21,7 +21,7 @@ npm install
 ## Usage
 
 ```sh
-npm run build
+npm run build ngx-grapesjs
 npm start
 ```
 
