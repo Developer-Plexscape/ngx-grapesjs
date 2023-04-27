@@ -5,30 +5,20 @@ import { addDependencies, addGrapesJsCssToTarget } from './utility';
 
 export const ngAdd =
   (options: Schema) => async () => {
-    const baseGrapesjsPath = 'node_modules/grapesjs/dist';
-    const baseGrapesjsWebpagePath = 'node_modules/grapesjs-preset-webpage/dist';
-    const baseGrapesjsNewsletterPath = 'node_modules/grapesjs-preset-newsletter/dist';
-
-    const grapesCssAssetPaths = [`${baseGrapesjsPath}/css/grapes.min.css`];
-    const grapesJsAssetPaths = [`${baseGrapesjsPath}/grapes.min.js`];
+    const grapesJsAssetPaths = ['node_modules/grapesjs/dist/grapes.min.js'];
 
     if (options.editorType === 'webpageEditor') {
-      grapesCssAssetPaths.push(
-        `${baseGrapesjsWebpagePath}/grapesjs-preset-webpage.min.css`
-      );
       grapesJsAssetPaths.push(
-        `${baseGrapesjsWebpagePath}/grapesjs-preset-webpage.min.js`
+        'node_modules/grapesjs-preset-webpage/dist/index.js',
+        'node_modules/grapesjs-blocks-basic/dist/index.js'
       );
     } else {
-      grapesCssAssetPaths.push(
-        `${baseGrapesjsNewsletterPath}/grapesjs-preset-newsletter.css`
-      );
       grapesJsAssetPaths.push(
-        `${baseGrapesjsNewsletterPath}/grapesjs-preset-newsletter.min.js`
+        'node_modules/grapesjs-preset-newsletter/dist/index.js'
       );
     }
     return chain([
-      addGrapesJsCssToTarget(options.project, grapesCssAssetPaths, 'styles'),
+      addGrapesJsCssToTarget(options.project, ['node_modules/grapesjs/dist/css/grapes.min.css'], 'styles'),
       addGrapesJsCssToTarget(options.project, grapesJsAssetPaths, 'scripts'),
       addDependencies()
     ]);

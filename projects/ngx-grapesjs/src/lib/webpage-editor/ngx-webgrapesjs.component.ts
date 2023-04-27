@@ -12,9 +12,12 @@ export class NgxWebpageEditorComponent extends NgxEditorComponent implements OnI
 
   private webpageConfig: Partial<Config> = {
     container: '#gjs',
-    plugins: ['gjs-preset-webpage'],
+    plugins: [
+      'grapesjs-preset-webpage',
+      'gjs-blocks-basic'
+    ],
     pluginsOpts: {
-      'gjs-preset-webpage': {
+      'grapesjs-preset-webpage': {
         modalTitleImport: 'Import template'
       }
     }

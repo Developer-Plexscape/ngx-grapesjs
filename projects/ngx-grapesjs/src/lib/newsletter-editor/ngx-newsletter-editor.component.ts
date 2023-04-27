@@ -1,9 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 
-import { NgxEditorComponent } from '../editor.component';
 import { CommandSender, NewsletterConfig, NewsletterEditor, TextAction, TextEditor } from './newsletter-editor.model';
 import { NgxNewsletterEditorService } from './ngx-newsletter-editor.service';
 import { Placeholder } from './placeholder.model';
+import { NgxEditorComponent } from '../editor.component';
 
 @Component({
   selector: 'ngx-grapes-newsletter-editor',
@@ -16,9 +16,9 @@ export class NgxNewsletterEditorComponent extends NgxEditorComponent implements 
   private editor: NewsletterEditor | undefined;
   private newsletterConfig: Partial<NewsletterConfig> = {
     container: '#gjs',
-    plugins: ['gjs-preset-newsletter'],
+    plugins: ['grapesjs-preset-newsletter'],
     pluginsOpts: {
-      'gjs-preset-newsletter': {
+      'grapesjs-preset-newsletter': {
         modalTitleImport: 'Import template'
       }
     },

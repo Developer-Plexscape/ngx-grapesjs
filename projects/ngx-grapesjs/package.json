@@ -10,11 +10,12 @@
     "release:major": "standard-version --release-as major --tag-prefix="
   },
   "peerDependencies": {
-    "@angular/common": "^14.0.0",
-    "@angular/core": "^14.0.0",
-    "grapesjs": "^0.17.29",
-    "grapesjs-preset-newsletter": "^0.2.21",
-    "grapesjs-preset-webpage": "^0.1.11"
+    "@angular/common": "^15.0.0",
+    "@angular/core": "^15.0.0",
+    "grapesjs": "^0.21.1",
+    "grapesjs-preset-newsletter": "^1.0.1",
+    "grapesjs-preset-webpage": "^1.0.2",
+    "grapesjs-blocks-basic": "^1.0.1"
   },
   "dependencies": {
     "tslib": "^2.3.0"
