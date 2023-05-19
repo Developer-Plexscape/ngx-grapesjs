@@ -191,6 +191,8 @@
     }
   ],
   "plugins": [
+    "@angular-eslint",
+    "@typescript-eslint/eslint-plugin",
     "eslint-plugin-import",
     "@babel",
     "deprecation"

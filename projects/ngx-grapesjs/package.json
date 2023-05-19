@@ -10,8 +10,8 @@
     "release:major": "standard-version --release-as major --tag-prefix="
   },
   "peerDependencies": {
-    "@angular/common": "^15.0.0",
-    "@angular/core": "^15.0.0",
+    "@angular/common": "^16.0.0",
+    "@angular/core": "^16.0.0",
     "grapesjs": "^0.21.1",
     "grapesjs-preset-newsletter": "^1.0.1",
     "grapesjs-preset-webpage": "^1.0.2",
