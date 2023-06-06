@@ -4,7 +4,7 @@
   "description": "Angular wrapper library for GrapesJS",
   "scripts": {
     "build": "tsc -p tsconfig.schematics.json",
-    "postbuild": "copyfiles schematics/*/schema.json schematics/*/files/** schematics/collection.json ../../dist/ngx-grapesjs/"
+    "postbuild": "copyfiles schematics/*/schema.json schematics/collection.json ../../dist/ngx-grapesjs/"
   },
   "peerDependencies": {
     "@angular/common": "^16.0.0",
