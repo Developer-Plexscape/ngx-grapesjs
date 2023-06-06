@@ -22,7 +22,7 @@ Ngx-grapesjs is an Angular library that wraps basic functionality of the [Grapes
     npm install grapesjs-preset-newsletter
   ```
 
-3. Install **ngx-grapesjs**
+3. Install `ngx-grapesjs`
 
   ```sh
     ng add ngx-grapesjs
