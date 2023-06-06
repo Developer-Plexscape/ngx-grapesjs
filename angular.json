@@ -27,9 +27,15 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/ngx-grapesjs/src/test.ts",
             "tsConfig": "projects/ngx-grapesjs/tsconfig.spec.json",
-            "karmaConfig": "projects/ngx-grapesjs/karma.conf.js"
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "scripts": [
+              "node_modules/grapesjs/dist/grapes.min.js",
+              "node_modules/grapesjs-preset-newsletter/dist/index.js"
+            ]
           }
         },
         "lint": {
@@ -45,11 +51,7 @@
     },
     "demo-editor": {
       "projectType": "application",
-      "schematics": {
-        "@schematics/angular:application": {
-          "strict": true
-        }
-      },
+      "schematics": {},
       "root": "projects/demo-editor",
       "sourceRoot": "projects/demo-editor/src",
       "prefix": "app",
@@ -60,7 +62,9 @@
             "outputPath": "dist/demo-editor",
             "index": "projects/demo-editor/src/index.html",
             "main": "projects/demo-editor/src/main.ts",
-            "polyfills": "projects/demo-editor/src/polyfills.ts",
+            "polyfills": [
+              "zone.js"
+            ],
             "tsConfig": "projects/demo-editor/tsconfig.app.json",
             "assets": [
               "projects/demo-editor/src/favicon.ico",
@@ -89,12 +93,6 @@
                   "type": "anyComponentStyle",
                   "maximumWarning": "2kb",
                   "maximumError": "4kb"
-                }
-              ],
-              "fileReplacements": [
-                {
-                  "replace": "projects/demo-editor/src/environments/environment.ts",
-                  "with": "projects/demo-editor/src/environments/environment.prod.ts"
                 }
               ],
               "outputHashing": "all"
@@ -131,10 +129,11 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/demo-editor/src/test.ts",
-            "polyfills": "projects/demo-editor/src/polyfills.ts",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
             "tsConfig": "projects/demo-editor/tsconfig.spec.json",
-            "karmaConfig": "projects/demo-editor/karma.conf.js",
             "assets": [
               "projects/demo-editor/src/favicon.ico",
               "projects/demo-editor/src/assets"
@@ -146,14 +145,6 @@
           }
         }
       }
-    }
-  },
-  "schematics": {
-    "@angular-eslint/schematics:application": {
-      "setParserOptionsProject": true
-    },
-    "@angular-eslint/schematics:library": {
-      "setParserOptionsProject": true
     }
   }
 }

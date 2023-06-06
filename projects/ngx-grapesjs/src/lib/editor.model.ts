@@ -4,6 +4,6 @@ export interface Config {
   components: string;
   pluginsOpts: Record<string, any>;
   storageManager: {
-    id: string
+    id: string;
   };
 }

@@ -6,14 +6,10 @@ describe('NgxNewsletterEditorComponent', () => {
   let component: NgxNewsletterEditorComponent;
   let fixture: ComponentFixture<NgxNewsletterEditorComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [NgxNewsletterEditorComponent]
-    })
-      .compileComponents();
-  });
-
   beforeEach(() => {
+    TestBed.configureTestingModule({
+      declarations: [NgxNewsletterEditorComponent]
+    });
     fixture = TestBed.createComponent(NgxNewsletterEditorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

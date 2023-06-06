@@ -48,20 +48,6 @@
             "newlines-between": "always"
           }
         ],
-        "@typescript-eslint/member-ordering": [
-          "error",
-          {
-            "default": [
-              "public-decorated-field",
-              "public-instance-field",
-              "private-decorated-field",
-              "private-instance-field",
-              "public-constructor",
-              "public-instance-method",
-              "private-instance-method"
-            ]
-          }
-        ],
         "max-len": [
           "error",
           {
@@ -98,12 +84,6 @@
           "1tbs",
           {
             "allowSingleLine": true
-          }
-        ],
-        "@typescript-eslint/explicit-member-accessibility": [
-          "error",
-          {
-            "accessibility": "no-public"
           }
         ],
         "space-in-parens": "error",
@@ -167,7 +147,6 @@
             ]
           }
         ],
-        "@typescript-eslint/type-annotation-spacing": "error",
         "@babel/semi": "error",
         "quotes": [
           "error",
@@ -176,8 +155,48 @@
             "allowTemplateLiterals": true
           }
         ],
-        "deprecation/deprecation": "error",
-        "array-bracket-spacing": "error"
+        "deprecation/deprecation": "warn",
+        "array-bracket-spacing": "error",
+        "@typescript-eslint/type-annotation-spacing": "error",
+        "@typescript-eslint/member-delimiter-style": [
+          "error",
+          {
+            "overrides": {
+              "typeLiteral": {
+                "singleline": {
+                  "delimiter": "comma"
+                }
+              }
+            }
+          }
+        ],
+        "@typescript-eslint/explicit-member-accessibility": [
+          "error",
+          {
+            "accessibility": "no-public"
+          }
+        ],
+        "@typescript-eslint/member-ordering": [
+          "error",
+          {
+            "default": [
+              "public-decorated-field",
+              "public-instance-field",
+              "private-decorated-field",
+              "private-instance-field",
+              "public-constructor",
+              "public-instance-method",
+              "private-instance-method"
+            ]
+          }
+        ],
+        "@typescript-eslint/ban-types": "error",
+        "@typescript-eslint/no-inferrable-types": "error",
+        "@typescript-eslint/prefer-includes": "error",
+        "@typescript-eslint/prefer-optional-chain": "error",
+        "@typescript-eslint/restrict-plus-operands": "error",
+        "rxjs/no-nested-subscribe": "error",
+        "jasmine/new-line-between-declarations": "error"
       }
     },
     {
@@ -195,6 +214,8 @@
     "@typescript-eslint/eslint-plugin",
     "eslint-plugin-import",
     "@babel",
-    "deprecation"
+    "deprecation",
+    "rxjs",
+    "jasmine"
   ]
 }

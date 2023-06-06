@@ -3,7 +3,7 @@ import { Component, Input } from '@angular/core';
 import { Config } from './editor.model';
 
 declare var grapesjs: {
-  init(options: any): {}
+  init(options: any): object;
 };
 
 @Component({
