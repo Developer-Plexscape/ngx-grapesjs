@@ -57,11 +57,11 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
             "outputPath": "dist/demo-editor",
             "index": "projects/demo-editor/src/index.html",
-            "main": "projects/demo-editor/src/main.ts",
+            "browser": "projects/demo-editor/src/main.ts",
             "polyfills": [
               "zone.js"
             ],
@@ -98,12 +98,9 @@
               "outputHashing": "all"
             },
             "development": {
-              "buildOptimizer": false,
               "optimization": false,
-              "vendorChunk": true,
               "extractLicenses": false,
-              "sourceMap": true,
-              "namedChunks": true
+              "sourceMap": true
             }
           },
           "defaultConfiguration": "production"
@@ -112,10 +109,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "demo-editor:build:production"
+              "buildTarget": "demo-editor:build:production"
             },
             "development": {
-              "browserTarget": "demo-editor:build:development"
+              "buildTarget": "demo-editor:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -123,7 +120,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "demo-editor:build"
+            "buildTarget": "demo-editor:build"
           }
         },
         "test": {
