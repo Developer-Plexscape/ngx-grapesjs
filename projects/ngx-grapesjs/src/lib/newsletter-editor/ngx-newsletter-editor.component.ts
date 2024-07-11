@@ -7,7 +7,8 @@ import { NgxEditorComponent } from '../editor.component';
 
 @Component({
   selector: 'ngx-grapes-newsletter-editor',
-  template: '<div id="gjs"></div>'
+  template: '<div id="gjs"></div>',
+  standalone: true
 })
 export class NgxNewsletterEditorComponent extends NgxEditorComponent implements OnInit {
 

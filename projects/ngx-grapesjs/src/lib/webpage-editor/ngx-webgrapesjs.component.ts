@@ -5,7 +5,8 @@ import { Config } from '../editor.model';
 
 @Component({
   selector: 'ngx-grapes-webpage-editor',
-  template: '<div id="gjs"></div>'
+  template: '<div id="gjs"></div>',
+  standalone: true
 })
 
 export class NgxWebpageEditorComponent extends NgxEditorComponent implements OnInit {

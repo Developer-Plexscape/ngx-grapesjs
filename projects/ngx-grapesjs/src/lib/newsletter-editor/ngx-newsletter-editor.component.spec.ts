@@ -8,7 +8,7 @@ describe('NgxNewsletterEditorComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [NgxNewsletterEditorComponent]
+      imports: [NgxNewsletterEditorComponent]
     });
     fixture = TestBed.createComponent(NgxNewsletterEditorComponent);
     component = fixture.componentInstance;
