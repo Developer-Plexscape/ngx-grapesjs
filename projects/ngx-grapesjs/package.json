@@ -1,18 +1,18 @@
 {
   "name": "ngx-grapesjs",
-  "version": "17.0.0",
+  "version": "18.0.0",
   "description": "Angular wrapper library for GrapesJS",
   "scripts": {
     "build": "tsc -p tsconfig.schematics.json",
     "postbuild": "copyfiles schematics/*/schema.json schematics/collection.json ../../dist/ngx-grapesjs/"
   },
   "peerDependencies": {
-    "@angular/common": "^17.0.0",
-    "@angular/core": "^17.0.0",
-    "grapesjs": "^0.21.1",
-    "grapesjs-preset-newsletter": "^1.0.1",
-    "grapesjs-preset-webpage": "^1.0.2",
-    "grapesjs-blocks-basic": "^1.0.1"
+    "@angular/common": "^18.0.0",
+    "@angular/core": "^18.0.0",
+    "grapesjs": "^0.21.12",
+    "grapesjs-blocks-basic": "^1.0.2",
+    "grapesjs-preset-newsletter": "^1.0.2",
+    "grapesjs-preset-webpage": "^1.0.3"
   },
   "dependencies": {
     "tslib": "^2.3.0"

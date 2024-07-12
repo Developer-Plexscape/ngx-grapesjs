@@ -31,7 +31,6 @@ npm start
 
 * Website: http://www.plexearth.com
 * Twitter: [@plexearth](https://twitter.com/plexearth)
-* Github: [@Developer-Plexscape](https://github.com/Developer-Plexscape)
 * LinkedIn: [@plexearth](https://linkedin.com/company/plexearth)
 
 ## 🤝 Contributing

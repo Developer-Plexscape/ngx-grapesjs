@@ -32,26 +32,9 @@ The previous command will ask you which editor mode you want to use and it will 
 
 ## Usage
 
- 1. Import `NgxGrapesjsModule` from the `ngx-grapesjs` library:
+ 1. Import `NgxWebpageEditorComponent` or `NgxNewsletterEditorComponent` from the `ngx-grapesjs` library, according to the editor mode that you want to use and add it to the `imports` array of your Angular component or module.
 
-    ```ts
-      import { NgxGrapesjsModule } from 'ngx-grapesjs';
-    ```
-
-2. Add `NgxGrapesjsModule` into the `imports` array of your Angular module:
-
-    ```ts
-      @NgModule({
-        declarations: [AppComponent],
-        imports: [
-          BrowserModule,
-          NgxGrapesjsModule
-        ],
-        bootstrap: [AppComponent]
-      })
-    ```
-
-3. Create an Angular component and add one of the following HTML snippets according to the editor mode that you want to use:
+2. Create an Angular component and add one of the following HTML snippets according to the editor mode that you want to use:
 
     For webpage mode:
 
