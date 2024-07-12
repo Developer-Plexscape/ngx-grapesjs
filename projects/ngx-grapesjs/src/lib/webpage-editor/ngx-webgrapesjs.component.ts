@@ -8,7 +8,6 @@ import { Config } from '../editor.model';
   template: '<div id="gjs"></div>',
   standalone: true
 })
-
 export class NgxWebpageEditorComponent extends NgxEditorComponent implements OnInit {
 
   private webpageConfig: Partial<Config> = {

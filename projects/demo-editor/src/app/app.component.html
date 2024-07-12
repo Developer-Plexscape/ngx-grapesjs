@@ -8,6 +8,9 @@
   <label for="newsletter">Newsletter</label>
 </div>
 <div class="editor">
-  <ngx-grapes-newsletter-editor *ngIf="editorMode === 'newsletter'" [template]="template" [placeholders]="placeholders"></ngx-grapes-newsletter-editor>
-  <ngx-grapes-webpage-editor *ngIf="editorMode === 'webpage'" [template]="template"></ngx-grapes-webpage-editor>
+  @if (editorMode === 'newsletter') {
+    <ngx-grapes-newsletter-editor [template]="template" [placeholders]="placeholders" />
+  } @else if (editorMode === 'webpage') {
+    <ngx-grapes-webpage-editor [template]="template" />
+  }
 </div>

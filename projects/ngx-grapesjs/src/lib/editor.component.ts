@@ -9,7 +9,6 @@ declare var grapesjs: {
 @Component({
   template: ''
 })
-
 export class NgxEditorComponent {
 
   @Input() template = '';
