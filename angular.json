@@ -37,15 +37,6 @@
               "node_modules/grapesjs-preset-newsletter/dist/index.js"
             ]
           }
-        },
-        "lint": {
-          "builder": "@angular-eslint/builder:lint",
-          "options": {
-            "lintFilePatterns": [
-              "projects/ngx-grapesjs/**/*.ts",
-              "projects/ngx-grapesjs/**/*.html"
-            ]
-          }
         }
       }
     },
