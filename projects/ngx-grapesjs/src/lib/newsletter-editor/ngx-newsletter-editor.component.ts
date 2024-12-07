@@ -7,8 +7,7 @@ import { NgxEditorComponent } from '../editor.component';
 
 @Component({
   selector: 'ngx-grapes-newsletter-editor',
-  template: '<div id="gjs"></div>',
-  standalone: true
+  template: '<div id="gjs"></div>'
 })
 export class NgxNewsletterEditorComponent extends NgxEditorComponent implements OnInit {
 
@@ -44,7 +43,7 @@ export class NgxNewsletterEditorComponent extends NgxEditorComponent implements 
     this.addPlaceholders();
   }
 
-  getRawHtml(): string | undefined {
+  getRawHtml() {
     return this.editor?.runCommand?.('gjs-get-inlined-html');
   }
 

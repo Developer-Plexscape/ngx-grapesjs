@@ -6,9 +6,7 @@ declare var grapesjs: {
   init(options: any): object;
 };
 
-@Component({
-  template: ''
-})
+@Component({ template: '' })
 export class NgxEditorComponent {
 
   @Input() template = '';
