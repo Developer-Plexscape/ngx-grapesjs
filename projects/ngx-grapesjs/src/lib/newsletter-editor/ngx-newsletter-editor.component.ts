@@ -1,7 +1,6 @@
-import { Component, OnInit, inject, input } from '@angular/core';
+import { Component, OnInit, input } from '@angular/core';
 
-import { CommandSender, NewsletterConfig, NewsletterEditor, TextAction, TextEditor } from './newsletter-editor.model';
-import { NgxNewsletterEditorService } from './ngx-newsletter-editor.service';
+import { NewsletterConfig, NewsletterEditor, TextAction, TextEditor } from './newsletter-editor.model';
 import { Placeholder } from './placeholder.model';
 import { NgxEditorComponent } from '../editor.component';
 
@@ -10,8 +9,6 @@ import { NgxEditorComponent } from '../editor.component';
   template: '<div id="gjs"></div>'
 })
 export class NgxNewsletterEditorComponent extends NgxEditorComponent implements OnInit {
-  private ngxNewsletterEditorService = inject(NgxNewsletterEditorService);
-
   readonly placeholders = input<Placeholder[]>([]);
 
   private editor: NewsletterEditor | undefined;
@@ -22,57 +19,12 @@ export class NgxNewsletterEditorComponent extends NgxEditorComponent implements 
       'grapesjs-preset-newsletter': {
         modalTitleImport: 'Import template'
       }
-    },
-    parser: {
-      parserHtml: {}
     }
   };
 
   ngOnInit() {
-    // setup the default parser. It can be overriden by providing a custom implementation of the ngxNewsletterEditorService
-    if (this.newsletterConfig.parser) {
-      this.newsletterConfig.parser.parserHtml = this.ngxNewsletterEditorService?.parserHtml;
-    }
-
     this.editor = this.setup(this.newsletterConfig);
-
-    this.addButtons();
     this.addPlaceholders();
-  }
-
-  getRawHtml() {
-    return this.editor?.runCommand?.('gjs-get-inlined-html');
-  }
-
-  private undo = (editor: NewsletterEditor, sender: CommandSender) => {
-    sender.set('active', 0);
-    editor.UndoManager?.undo(1);
-  };
-
-  private redo = (editor: NewsletterEditor, sender: CommandSender) => {
-    sender.set('active', 0);
-    editor.UndoManager?.redo(1);
-  };
-
-  private addButtons() {
-    this.editor?.Panels?.addButton('options', [
-      {
-        id: 'undo',
-        className: 'fa fa-undo',
-        command: this.undo,
-        attributes: {
-          title: 'Undo'
-        }
-      },
-      {
-        id: 'redo',
-        className: 'fa fa-repeat icon-redo',
-        command: this.redo,
-        attributes: {
-          title: 'Redo'
-        }
-      }
-    ]);
   }
 
   private addPlaceholders() {

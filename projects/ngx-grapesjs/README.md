@@ -58,4 +58,3 @@ Both editors support passing the following input properties:
 Additionally, the newsletter editor component supports the following options:
 
 - `placeholders`: an input property which is a list of variables with a predefined [format](https://github.com/Developer-Plexscape/ngx-grapesjs/blob/master/projects/ngx-grapesjs/src/lib/placeholder.model.ts) that represent custom data in the template
-- `getRawHtml`: a method to get the HTML content from the editor in ***raw*** format
