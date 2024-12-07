@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 import { Config } from './editor.model';
 
@@ -9,14 +9,14 @@ declare var grapesjs: {
 @Component({ template: '' })
 export class NgxEditorComponent {
 
-  @Input() template = '';
-  @Input() storagePrefix = 'gjs-';
+  readonly template = input('');
+  readonly storagePrefix = input('gjs-');
 
   setup(customConfig: Partial<Config>) {
     const config: Partial<Config> = {
-      components: this.template,
+      components: this.template(),
       storageManager: {
-        id: this.storagePrefix
+        id: this.storagePrefix()
       }
     };
 

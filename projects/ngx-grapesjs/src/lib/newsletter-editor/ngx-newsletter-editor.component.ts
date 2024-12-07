@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit, inject, input } from '@angular/core';
 
 import { CommandSender, NewsletterConfig, NewsletterEditor, TextAction, TextEditor } from './newsletter-editor.model';
 import { NgxNewsletterEditorService } from './ngx-newsletter-editor.service';
@@ -10,8 +10,9 @@ import { NgxEditorComponent } from '../editor.component';
   template: '<div id="gjs"></div>'
 })
 export class NgxNewsletterEditorComponent extends NgxEditorComponent implements OnInit {
+  private ngxNewsletterEditorService = inject(NgxNewsletterEditorService);
 
-  @Input() placeholders: Placeholder[] = [];
+  readonly placeholders = input<Placeholder[]>([]);
 
   private editor: NewsletterEditor | undefined;
   private newsletterConfig: Partial<NewsletterConfig> = {
@@ -26,10 +27,6 @@ export class NgxNewsletterEditorComponent extends NgxEditorComponent implements 
       parserHtml: {}
     }
   };
-
-  constructor(private ngxNewsletterEditorService: NgxNewsletterEditorService) {
-    super();
-  }
 
   ngOnInit() {
     // setup the default parser. It can be overriden by providing a custom implementation of the ngxNewsletterEditorService
@@ -79,8 +76,9 @@ export class NgxNewsletterEditorComponent extends NgxEditorComponent implements 
   }
 
   private addPlaceholders() {
-    if (this.placeholders.length) {
-      const placeholderSelectOptions = this.placeholders.map(placeholder =>
+    const placeholders = this.placeholders();
+    if (placeholders.length) {
+      const placeholderSelectOptions = placeholders.map(placeholder =>
         `<option
             title="${placeholder.description}"
             data-tooltip-pos="bottom"
