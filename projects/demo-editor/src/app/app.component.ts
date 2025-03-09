@@ -14,7 +14,7 @@ import { NgxNewsletterEditorComponent, NgxWebpageEditorComponent } from 'ngx-gra
 })
 export class AppComponent {
   editorMode = '';
-  template = '<span>This is a test content</span>'
+  template = '<span>This is a test content</span>';
   placeholders = [{
     value: 'MyPlaceholder',
     name: 'Custom placeholder',

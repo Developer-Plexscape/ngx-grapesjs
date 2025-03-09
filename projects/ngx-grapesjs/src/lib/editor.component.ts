@@ -11,6 +11,7 @@ export class NgxEditorComponent {
 
   readonly template = input('');
   readonly storagePrefix = input('gjs-');
+  readonly plugins = input<string[]>([]);
 
   setup(customConfig: Partial<Config>) {
     const config: Partial<Config> = {
@@ -22,7 +23,8 @@ export class NgxEditorComponent {
 
     return grapesjs.init({
       ...config,
-      ...customConfig
+      ...customConfig,
+      plugins: [...customConfig.plugins!, ...this.plugins()]
     });
   }
 

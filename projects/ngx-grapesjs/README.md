@@ -52,6 +52,7 @@ Both editors support passing the following input properties:
 
  - `template`: the HTML content of the editor in string format
  - `storagePrefix`: the prefix that GrapesJS will use for persisting data to the local storage. By default it uses the `gjs-` prefix.
+ - `plugins`: additional GrapesJS plugins to use. It requires that the respective npm package of the plugins must have been installed previously.
 
 >It is recommended to use a custom prefix when running multiple instances of the editor such as when opening or editing content in different tabs.
 

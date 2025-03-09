@@ -1,6 +1,6 @@
 {
   "name": "ngx-grapesjs",
-  "version": "19.0.0",
+  "version": "19.1.0",
   "description": "Angular wrapper library for GrapesJS",
   "scripts": {
     "build": "tsc -p tsconfig.schematics.json",
