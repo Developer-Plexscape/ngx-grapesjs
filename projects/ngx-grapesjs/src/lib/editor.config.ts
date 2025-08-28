@@ -1,16 +1,9 @@
-import { InjectionToken } from '@angular/core';
-
-import { Config } from './editor.model';
-
-export const BASE_CONFIG: Config = {
-  container: '#gjs',
-  plugins: [],
-  components: '',
-  pluginsOpts: {},
+export interface EditorConfig {
+  container: string;
+  plugins: string[];
+  components: string;
+  pluginsOpts: Record<string, any>;
   storageManager: {
-    id: 'gjs-'
-  }
-};
-
-export const EDITOR_CONFIG = new InjectionToken<Config>('editor.config');
-
+    id: string;
+  };
+}

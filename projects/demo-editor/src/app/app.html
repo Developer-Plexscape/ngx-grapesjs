@@ -9,7 +9,7 @@
 </div>
 <div class="editor">
   @if (editorMode === 'newsletter') {
-    <ngx-grapes-newsletter-editor [template]="template" [placeholders]="placeholders" />
+    <ngx-grapes-newsletter-editor [template]="template" />
   } @else if (editorMode === 'webpage') {
     <ngx-grapes-webpage-editor [template]="template" />
   }

@@ -7,10 +7,11 @@
     "declaration": true,
     "declarationMap": true,
     "inlineSources": true,
-    "types": [],
-    "noUnusedLocals": true,
-    "noUnusedParameters": true
+    "types": []
   },
+  "include": [
+    "src/**/*.ts"
+  ],
   "exclude": [
     "**/*.spec.ts"
   ]

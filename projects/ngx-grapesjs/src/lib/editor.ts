@@ -1,20 +1,21 @@
 import { Component, input } from '@angular/core';
 
-import { Config } from './editor.model';
+import { EditorConfig } from './editor.config';
 
 declare var grapesjs: {
   init(options: any): object;
 };
 
 @Component({ template: '' })
-export class NgxEditorComponent {
+export class NgxEditor {
 
   readonly template = input('');
   readonly storagePrefix = input('gjs-');
   readonly plugins = input<string[]>([]);
 
-  setup(customConfig: Partial<Config>) {
-    const config: Partial<Config> = {
+  setup(customConfig: Partial<EditorConfig>) {
+    const config: Partial<EditorConfig> = {
+      container: '#gjs',
       components: this.template(),
       storageManager: {
         id: this.storagePrefix()

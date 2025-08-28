@@ -55,7 +55,3 @@ Both editors support passing the following input properties:
  - `plugins`: additional GrapesJS plugins to use. It requires that the respective npm package of the plugins must have been installed previously.
 
 >It is recommended to use a custom prefix when running multiple instances of the editor such as when opening or editing content in different tabs.
-
-Additionally, the newsletter editor component supports the following options:
-
-- `placeholders`: an input property which is a list of variables with a predefined [format](https://github.com/Developer-Plexscape/ngx-grapesjs/blob/master/projects/ngx-grapesjs/src/lib/placeholder.model.ts) that represent custom data in the template

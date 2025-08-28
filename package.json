@@ -6,19 +6,28 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "lint": "ng lint"
+    "test": "ng test"
+  },
+  "prettier": {
+    "printWidth": 100,
+    "singleQuote": true,
+    "overrides": [
+      {
+        "files": "*.html",
+        "options": {
+          "parser": "angular"
+        }
+      }
+    ]
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^19.0.3",
-    "@angular/common": "^19.0.3",
-    "@angular/compiler": "^19.0.3",
-    "@angular/core": "^19.0.3",
-    "@angular/forms": "^19.0.3",
-    "@angular/platform-browser": "^19.0.3",
-    "@angular/platform-browser-dynamic": "^19.0.3",
-    "@angular/router": "^19.0.3",
+    "@angular/common": "^20.2.2",
+    "@angular/compiler": "^20.2.2",
+    "@angular/core": "^20.2.2",
+    "@angular/forms": "^20.2.2",
+    "@angular/platform-browser": "^20.2.2",
+    "@angular/router": "^20.2.2",
     "grapesjs": "^0.22.4",
     "grapesjs-blocks-basic": "^1.0.2",
     "grapesjs-preset-newsletter": "^1.0.2",
@@ -28,10 +37,9 @@
     "zone.js": "~0.15.0"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^19.0.4",
-    "@angular-devkit/core": "^19.0.4",
-    "@angular/cli": "^19.0.4",
-    "@angular/compiler-cli": "^19.0.3",
+    "@angular/build": "^20.2.1",
+    "@angular/cli": "^20.2.1",
+    "@angular/compiler-cli": "^20.2.2",
     "@types/jasmine": "~5.1.0",
     "copyfiles": "^2.4.1",
     "jasmine-core": "~5.4.0",
@@ -40,7 +48,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
-    "ng-packagr": "^19.0.1",
-    "typescript": "~5.6.2"
+    "ng-packagr": "^20.2.0",
+    "typescript": "~5.9.2"
   }
 }
