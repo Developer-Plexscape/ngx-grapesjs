@@ -1,14 +1,14 @@
 {
   "name": "ngx-grapesjs",
-  "version": "20.0.0",
+  "version": "21.0.0",
   "description": "Angular wrapper library for GrapesJS",
   "scripts": {
     "build": "tsc -p tsconfig.schematics.json",
     "postbuild": "copyfiles schematics/*/schema.json schematics/collection.json ../../dist/ngx-grapesjs/"
   },
   "peerDependencies": {
-    "@angular/common": "^20.0.0",
-    "@angular/core": "^20.0.0",
+    "@angular/common": "^21.0.0",
+    "@angular/core": "^21.0.0",
     "grapesjs": "^0.22.4",
     "grapesjs-blocks-basic": "^1.0.2",
     "grapesjs-preset-newsletter": "^1.0.2",
